@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="dbPU" transaction-type="RESOURCE_LOCAL">
+        <class>at.htl.model.Tennisplayer</class>
+        <class>at.htl.model.HobbyPlayer</class>
+        <class>at.htl.model.TournamentPlayer</class>
+        <class>at.htl.model.Tennismatch</class>
+        <class>at.htl.converter.LocalDateConverter</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="eclipselink.logging.level" value="FINE"/> <!--nicht notwendig vermutlich-->
+            <property name="eclipselink.target-database" value="DERBY"/> <!--nicht notwendig vermutlich-->
+
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/db"/>
+            <property name="javax.persistence.jdbc.user" value="app"/>
+            <property name="javax.persistence.jdbc.password" value="app"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
