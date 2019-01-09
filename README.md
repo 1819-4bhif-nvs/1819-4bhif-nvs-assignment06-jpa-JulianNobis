@@ -15,3 +15,4 @@
 <img src="images/cld.png" width="100%" />
 
 # ERD
+<img src="images/erd.png" width="100%" />
