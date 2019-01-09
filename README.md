@@ -12,6 +12,6 @@
 - Erstellen Systemtests auf Basis JavaSE.
 
 # CLD
-<img src="images/cld.PNG" width="100%" />
+<img src="images/cld.png" width="100%" />
 
 # ERD
