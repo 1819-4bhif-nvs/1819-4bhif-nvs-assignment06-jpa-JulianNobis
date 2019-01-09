@@ -21,7 +21,6 @@ public class InitBean {
     EntityManager em;
     public InitBean(){} // default konstruktor absichtlich leer
 
-    // todo: tennisplayer anlegen (vererbung beachten)
     @PostConstruct
     private void init(){
         Tennisplayer julianNobis = new TournamentPlayer("Julian Nobis", 5.0, 2001, 'm', 000001);
