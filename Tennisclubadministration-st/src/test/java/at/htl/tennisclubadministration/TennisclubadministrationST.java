@@ -84,4 +84,13 @@ public class TennisclubadministrationST {
         Response response = target.path("tennisplayer/delete/1").request().delete();
         assertThat(response.getStatus(), is(Response.Status.NO_CONTENT.getStatusCode()));
     }
+
+    @Test
+    public void test_createTeam(){
+        JsonObject team = Json.createObjectBuilder().add("teamName", "Landesliga C").build();
+        Response response = target.path("team/create").request().post(Entity.json(team));
+        assertThat(response.getStatus(), is(201)); //201 = created
+        JsonObject createdTeam = this.client.target(response.getLocation()).request(MediaType.APPLICATION_JSON).get().readEntity(JsonObject.class);
+        assertThat(createdTeam.getString("teamName"), is("Landesliga C"));
+    }
 }

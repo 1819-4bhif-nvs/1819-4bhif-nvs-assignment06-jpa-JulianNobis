@@ -4,23 +4,27 @@ import javax.persistence.Entity;
 
 @Entity
 public class HobbyPlayer extends Tennisplayer{
-    private boolean playsHobbycup;
+    private Boolean playsHobbycup;
 
     // region Constructor
     public HobbyPlayer(){}
-    public HobbyPlayer(String name, double itn, int year_born, char sex, boolean playsHobbycup){
+    public HobbyPlayer(String name, double itn, int year_born, char sex, Boolean playsHobbycup){
         super(name, itn, year_born, sex);
         this.playsHobbycup = playsHobbycup;
     }
     // endregion
 
     // region Getter & Setter
-    public boolean isPlaysHobbycup() {
+    public Boolean isPlaysHobbycup() {
         return playsHobbycup;
     }
 
-    public void setPlaysHobbycup(boolean playsHobbycup) {
-        this.playsHobbycup = playsHobbycup;
+    public void setPlaysHobbycup(Boolean playsHobbycup) {
+        if (this.playsHobbycup != null){
+            this.playsHobbycup = playsHobbycup;
+        } else{
+            this.playsHobbycup = false;
+        }
     }
     // endregion
 }
