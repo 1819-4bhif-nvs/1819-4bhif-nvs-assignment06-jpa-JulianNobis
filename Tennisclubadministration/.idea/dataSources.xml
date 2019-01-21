@@ -6,7 +6,7 @@
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
       <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
-      <jdbc-url>jdbc:derby://localhost:1527/sampledb;create=true</jdbc-url>
+      <jdbc-url>jdbc:derby://localhost:1527/sampledb</jdbc-url>
     </data-source>
   </component>
 </project>

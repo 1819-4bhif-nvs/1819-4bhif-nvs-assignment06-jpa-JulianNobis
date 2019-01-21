@@ -39,7 +39,6 @@ public abstract class Tennisplayer {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
-    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
     protected Team team;
 
     // region Constructor

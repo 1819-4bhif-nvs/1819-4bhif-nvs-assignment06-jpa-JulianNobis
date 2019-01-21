@@ -1,9 +1,6 @@
 package at.htl.tennisclubadministration.business;
 
-import at.htl.tennisclubadministration.model.HobbyPlayer;
-import at.htl.tennisclubadministration.model.Tennismatch;
-import at.htl.tennisclubadministration.model.Tennisplayer;
-import at.htl.tennisclubadministration.model.TournamentPlayer;
+import at.htl.tennisclubadministration.model.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -23,6 +20,7 @@ public class InitBean {
 
     @PostConstruct
     private void init(){
+        Team team = new Team("Landesliga C");
         Tennisplayer julianNobis = new TournamentPlayer("Julian Nobis", 5.0, 2001, 'm', 000001);
         em.persist(julianNobis);
         Tennisplayer yannikLeitner = new TournamentPlayer("Yannik Leitner", 3.5, 1992, 'm', 000002);
@@ -37,6 +35,14 @@ public class InitBean {
         em.persist(sofiaGroza);
         Tennisplayer lukasStransky = new HobbyPlayer("Lukas Stransky", 8.0, 2000, 'm', false);
         em.persist(lukasStransky);
+
+
+        team.addTeamMember(julianNobis);
+        team.addTeamMember(danGroza);
+        team.addTeamMember(philippBräuer);
+        team.addTeamMember(yannikLeitner);
+
+        em.persist(team);
 
         List<Tennisplayer> playersFirstMatch = new LinkedList<>(); // doppel
         playersFirstMatch.add(julianNobis);

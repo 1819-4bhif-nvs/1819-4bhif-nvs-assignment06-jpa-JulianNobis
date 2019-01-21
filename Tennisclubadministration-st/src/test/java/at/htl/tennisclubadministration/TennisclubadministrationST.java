@@ -8,6 +8,7 @@ import org.junit.runners.MethodSorters;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.ws.rs.client.Client;
@@ -38,7 +39,7 @@ public class TennisclubadministrationST {
 
     @Test
     public void test_FindAllTennisplayers(){
-        Response response = (Response) target.path("tennisplayer/find/all").request(MediaType.APPLICATION_JSON).get(JsonObject.class);
+        Response response = target.path("tennisplayer/find/all").request(MediaType.APPLICATION_JSON).get();
         assertThat(response.getStatus(), is(200));
         JsonArray jArray = response.readEntity(JsonArray.class);
         assertThat(jArray.size(), greaterThanOrEqualTo(1));
@@ -68,15 +69,17 @@ public class TennisclubadministrationST {
 
     @Test
     public void test_createTennisplayer(){
-        JsonObject tennisplayer =  Json
-                .createObjectBuilder()
+        //JsonObject tennisplayer =  Json
+        JsonObjectBuilder builder = Json.createObjectBuilder();
+        JsonObject tennisplayer = builder
+                //.createObjectBuilder()
                 .add("name", "Alex Bräuer")
                 .add("itn", 3.7)
                 .add("year_born", 1989)
                 .add("sex", 'm')
                 .build();
         Response response = target.path("tennisplayer/post").request().post(Entity.json(tennisplayer));
-        assertThat(response.getStatus(), is(200));
+        assertThat(response.getStatus(), is(201));
     }
 
     @Test
