@@ -95,7 +95,7 @@ Wildfly nun fertig konfiguriert! :tada
 ![alt text](images_application_server/08.png)
 
 #### Mögliche Probleme
-- "address already in use"
+- Beim Starten: "address already in use"
   - Bug Fix:
   ![alt text](images_application_server/07.png)
 
