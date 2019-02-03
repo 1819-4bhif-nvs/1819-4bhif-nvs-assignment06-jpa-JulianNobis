@@ -94,6 +94,8 @@ Wildfly nun fertig konfiguriert! :tada
 - Ausgabe im Browser
 ![alt text](images_application_server/08.png)
 
+GlassFish nun fertig konfiguriert! :tada:
+
 #### Mögliche Schwierigkeiten
 - Beim Starten: "address already in use"
   - Bug Fix:
@@ -105,13 +107,54 @@ Wildfly nun fertig konfiguriert! :tada
   - Diverse StackOverflow Lösungsansätze, dependency Erweiterungen im pom-File und im config Verzeichnis von glassfish den http-listener ändern hat leider nichts geholfen
 - Ich habe es nicht geschafft, GlassFish in ein bestehendes Projekt einzubauen...
 
-GlassFish nun fertig konfiguriert! :tada:
-
 ## Liberty 
-blabla
+#### Download
+- [Downloaden unter https://developer.ibm.com/wasdev/downloads/download-latest-stable-websphere-liberty-runtime/](https://developer.ibm.com/wasdev/downloads/download-latest-stable-websphere-liberty-runtime/)
+
+#### Zusätzliche Features installieren (inkl. full Java EE 8 support)
+ - bin/installUtitlity install adminCenter-1.0
+ - bin/server start
+ - usr/servers/server-name/dropins
+ - bin/installUtility install javaee-8.0
+ 
+ #### Maven dependency
+ - im pom-File des jeweiligen Projektes folgendes dependency hinzufügen 
+ ![alt text](images_application_server/16.png)
+ 
+ #### Konfiguration
+ - "Edit Configuration" und dann neuen Application Server (WebSphere Local) auswählen
+ - Selbes Spiel wie bei allen anderen auch (siehe Wildfly)
+ 
+ #### Starten des Servers
+ - Beim Starten kommt folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: java.lang.IllegalStateException: CWOWB2000E: Die Annotation @javax.transaction.Transactional(value=REQUIRED, rollbackOn=[], dontRollbackOn=[]) ist in der EJB TennisplayerEndpoint nicht zulässig."<br>
+Das heißt, dass ich die @Transactional Annotation weggeben muss - soweit so gut.<br>
+Durch was soll ich es ersetzen? Keine Ahnung, deshalb habe ich es jetzt erstmal weggelassen.
+- Dann erschien folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: com.ibm.ws.exception.RuntimeWarning: CNTR0201E: The InitBean startup singleton session bean in the tennisclubadministration module failed initialization."<br>
+Fragen über Fragen, das Internet weiß leider keine für mich zufriedenstellende Antwort, deshalb hab ich es endgültig sein lassen.
+
+Liberty funktioniert nicht!
 
 ## TomEE
-blabla
+#### Download
+- [Downloaden unter http://tomee.apache.org/downloads.html](http://tomee.apache.org/downloads.html)
+Die offizielle Website von Apache TomEE verweist darauf hin, dass die aktuellste Version "NOT JavaEE7 certified" ist.
+
+#### Konfiguration
+- Für Mac OSX:
+  - [Tutorial unter macappstore.org/tomee-plus/](http://macappstore.org/tomee-plus)
+- Für Windows:
+  - cmd als Administrator ausführen und in das bin-Verzeichnis von apache-tomee-7... gehen
+  - "service.bat install" ausführen 
+- Neue Konfiguration (TomEE Local) angelegt, bei Application Server die heruntergeladene Version ausgewählt und den Port angegeben
+![alt text](images_application_server/14.png)
+- funktioniert trotdem nicht - was fehlt noch??
+
+#### Starten des Servers
+- Nachdem die Connection zum Server erfolgreich verlaufen ist, kommt folgende <b>Fehlermeldung</b>
+![alt text](images_application_server/15.png)
+- Auch hier habe ich schon zahlreiche Lösungen ausprobiert, nichts hat jedoch funktioniert.
+
+TomEE funktioniert nicht!
 
 ## Payara 5
-blabla
+Habe Klassenkameraden gefragt, keiner konnte den Payara 5 zum Laufen kriegen...
