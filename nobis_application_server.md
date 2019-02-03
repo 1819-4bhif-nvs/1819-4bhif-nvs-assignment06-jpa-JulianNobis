@@ -94,10 +94,16 @@ Wildfly nun fertig konfiguriert! :tada
 - Ausgabe im Browser
 ![alt text](images_application_server/08.png)
 
-#### Mögliche Probleme
+#### Mögliche Schwierigkeiten
 - Beim Starten: "address already in use"
   - Bug Fix:
   ![alt text](images_application_server/07.png)
+
+#### Einbinden in ein bestehendes Projekt
+- bereitet Probleme beim Starten
+  - Exception Message: java.io.IOException: com.sun.enterprise.admin.remote.RemoteFailureException
+  - Diverse StackOverflow Lösungsansätze, dependency Erweiterungen im pom-File und im config Verzeichnis von glassfish den http-listener ändern hat leider nichts geholfen
+- Ich habe es nicht geschafft, GlassFish in ein bestehendes Projekt einzubauen...
 
 GlassFish nun fertig konfiguriert! :tada:
 
