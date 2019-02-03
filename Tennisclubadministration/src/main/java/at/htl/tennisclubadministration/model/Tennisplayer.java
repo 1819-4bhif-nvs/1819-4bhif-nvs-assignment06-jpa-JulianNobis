@@ -1,7 +1,7 @@
 package at.htl.tennisclubadministration.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jdk.jfr.Name;
+//import jdk.jfr.Name;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -27,10 +27,10 @@ public abstract class Tennisplayer {
     protected double itn; //ITN = international tennis number(Indikator für die ungefähre Spielstärke des jew. Spielers)
     protected int year_born;
     protected char sex; // könnte auch ein enum erstellen
-    @JsonIgnore
+    /*@JsonIgnore
     @XmlTransient
     @Column(name="DTYPE", insertable = false, updatable = false)
-    private String dType;
+    private String dType;*/
 
     @ManyToMany(mappedBy = "tennisplayers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore

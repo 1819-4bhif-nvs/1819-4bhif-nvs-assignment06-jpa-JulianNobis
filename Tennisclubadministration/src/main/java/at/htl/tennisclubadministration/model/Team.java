@@ -1,7 +1,7 @@
 package at.htl.tennisclubadministration.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jdk.jfr.Name;
+//import jdk.jfr.Name;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
