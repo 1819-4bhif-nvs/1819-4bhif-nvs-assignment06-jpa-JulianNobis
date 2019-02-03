@@ -25,7 +25,7 @@ Die aufgelisteten Punkte sind die Zusammenfassung des deutlich ausführlicher do
   - Wenn ein Error kommt, dann einfach "add-user.bat" im File-Explorer starten
 - Wildfly erneut starten (dieses mal nicht manuell)
   - localhost:9990
-  - Mit dem gerade vorher erstellten Benutzer anmelden![alt text](images_application_server\04.png)
+  - Mit dem gerade vorher erstellten Benutzer anmelden![alt text](images_application_server/04.png)
 - DerbyDB downloaden
   - [Downloaden unter https://db.apache.org/derby/derby_downloads.html](https://db.apache.org/derby/derby_downloads.html)
 - Registrieren des JDBC-Treibers
@@ -36,11 +36,11 @@ Die aufgelisteten Punkte sind die Zusammenfassung des deutlich ausführlicher do
   - Configuration -> Datasources & Drivers -> Datasources -> Add Datasource
 
 Der Wildfly Server ist nun vollständig konfiguriert. Jetzt fehlt nur noch im Jakarta EE Projekt auf "Edit Configuration" als Application Server den zip Ordner "Wildfly 15" auszuwählen.
-![alt text](images_application_server\01.png)
-![alt text](images_application_server\02.png)
+![alt text](images_application_server/01.png)
+![alt text](images_application_server/02.png)
 
 <b>Mögliche Fehlermeldung: </b>Es kann sein, dass der von Wildfly standardmäßig verwendete Port (8080) belegt ist und folgende Fehlermeldung erscheint "Error when JBoss starts: address already in use".<br>
-<b>Bug Fix: </b> ![alt text](images_application_server\05.png) 
+<b>Bug Fix: </b> ![alt text](images_application_server/05.png) 
 
 Wildfly nun fertig konfiguriert! :tada
 
@@ -54,7 +54,7 @@ Wildfly nun fertig konfiguriert! :tada
 #### Konfiguration des GlassFish Servers
 - Strg+Alt+S (oder IntelliJ IDEA -> Preferences auf macOS) Build,Execution, Deployment -> Application Servers -> Add -> Glassfish Server<br>
   - Heruntegeladenen GlassFish Server auswählen
-![alt text](images_application_server\06.png)
+![alt text](images_application_server/06.png)
 
 #### Konfiguration der JDK (nur falls noch nicht vorhanden)
 - Strg+Shift+Alt+S (oder File -> Project Structure) im Hauptmenü
@@ -72,12 +72,12 @@ Wildfly nun fertig konfiguriert! :tada
   - RestConfig = "MyApplication.java"
   - KEIN persistence.xml vorhanden
 -  Struktur
-![alt text](images_application_server\11.png)
+![alt text](images_application_server/11.png)
 #### Source Code
-- HelloCar.java (CarEndpoint)
-![alt text](images_application_server\09.png) 
+- HelloCar.java (CarEndpoint)<br>
+![alt text](images_application_server/09.png) 
 - MyApplication.java (RestConfig)
-![alt text](images_application_server\10.png)
+![alt text](images_application_server/10.png)
 
 #### Artifact Konfiguration
 - Strg+Shift+Alt+S (oder File -> Project Structure)
@@ -88,16 +88,22 @@ Wildfly nun fertig konfiguriert! :tada
 #### Run Configuration (Edit Configurations)
 - On 'Update' action auf "Restart Server"
 - Sonst bleibt alles gleich 
-![alt text](images_application_server\12.png)
+![alt text](images_application_server/12.png)
 
 #### Server starten
 - Ausgabe im Browser
-![alt text](images_application_server\08.png)
+![alt text](images_application_server/08.png)
 
-#### Mögliche Probleme
-- "address already in use"
+#### Mögliche Schwierigkeiten
+- Beim Starten: "address already in use"
   - Bug Fix:
-  ![alt text](images_application_server\07.png)
+  ![alt text](images_application_server/07.png)
+
+#### Einbinden in ein bestehendes Projekt
+- bereitet Probleme beim Starten
+  - Exception Message: java.io.IOException: com.sun.enterprise.admin.remote.RemoteFailureException
+  - Diverse StackOverflow Lösungsansätze, dependency Erweiterungen im pom-File und im config Verzeichnis von glassfish den http-listener ändern hat leider nichts geholfen
+- Ich habe es nicht geschafft, GlassFish in ein bestehendes Projekt einzubauen...
 
 GlassFish nun fertig konfiguriert! :tada:
 
