@@ -74,7 +74,7 @@ Wildfly nun fertig konfiguriert! :tada
 -  Struktur
 ![alt text](images_application_server/11.png)
 #### Source Code
-- HelloCar.java (CarEndpoint)
+- HelloCar.java (CarEndpoint)<br>
 ![alt text](images_application_server/09.png) 
 - MyApplication.java (RestConfig)
 ![alt text](images_application_server/10.png)
