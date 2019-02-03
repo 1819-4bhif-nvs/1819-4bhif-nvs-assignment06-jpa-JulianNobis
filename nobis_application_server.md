@@ -126,11 +126,13 @@ GlassFish nun fertig konfiguriert! :tada:
  - Selbes Spiel wie bei allen anderen auch (siehe Wildfly)
  
  #### Starten des Servers
- - Beim Starten kommt folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: java.lang.IllegalStateException: CWOWB2000E: Die Annotation @javax.transaction.Transactional(value=REQUIRED, rollbackOn=[], dontRollbackOn=[]) ist in der EJB TennisplayerEndpoint nicht zulässig."
-Das heißt, dass ich die @Transactional Annotation weggeben muss - soweit so gut.
+ - Beim Starten kommt folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: java.lang.IllegalStateException: CWOWB2000E: Die Annotation @javax.transaction.Transactional(value=REQUIRED, rollbackOn=[], dontRollbackOn=[]) ist in der EJB TennisplayerEndpoint nicht zulässig."<br>
+Das heißt, dass ich die @Transactional Annotation weggeben muss - soweit so gut.<br>
 Durch was soll ich es ersetzen? Keine Ahnung, deshalb habe ich es jetzt erstmal weggelassen.
-- Dann erschien folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: com.ibm.ws.exception.RuntimeWarning: CNTR0201E: The InitBean startup singleton session bean in the tennisclubadministration module failed initialization."
+- Dann erschien folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: com.ibm.ws.exception.RuntimeWarning: CNTR0201E: The InitBean startup singleton session bean in the tennisclubadministration module failed initialization."<br>
 Fragen über Fragen, das Internet weiß leider keine für mich zufriedenstellende Antwort, deshalb hab ich es endgültig sein lassen.
+
+Liberty funktioniert nicht!
 
 ## TomEE
 #### Download
@@ -151,6 +153,8 @@ Die offizielle Website von Apache TomEE verweist darauf hin, dass die aktuellste
 - Nachdem die Connection zum Server erfolgreich verlaufen ist, kommt folgende <b>Fehlermeldung</b>
 ![alt text](images_application_server/15.png)
 - Auch hier habe ich schon zahlreiche Lösungen ausprobiert, nichts hat jedoch funktioniert.
+
+TomEE funktioniert nicht!
 
 ## Payara 5
 Habe Klassenkameraden gefragt, keiner konnte den Payara 5 zum Laufen kriegen...
