@@ -6,9 +6,9 @@ Randinfo: Screenshots sind Windows basierend (Pfad ist anders auf Linux, sonst b
 
  - [Wildfly 15](#wildfly-15)
  - [Glassfish 5](#glassfish-5)
- - [Liberty](#liberty)
- - [TomEE](#tomee)
  - [Payara 5](#payara-5)
+ - [TomEE](#tomee)
+ - [Liberty](#liberty)
 
 ## Wildfly 15 
 Da die Dokumentation für den Wildfly Server sowohl auf Windows als auch auf Linux gleich ist, habe ich Wildfly in Windows konfiguriert (siehe Dateipfad-Screenshot).
@@ -125,32 +125,16 @@ GlassFish nun fertig konfiguriert! :tada:
   - Diverse StackOverflow Lösungsansätze, dependency Erweiterungen im pom-File und im config Verzeichnis von glassfish den http-listener ändern hat leider nichts geholfen
 - Ich habe es nicht geschafft, GlassFish in ein bestehendes Projekt einzubauen (DataSource-Probleme)...
 
-## Liberty 
-#### Download
-- [Downloaden unter https://developer.ibm.com/wasdev/downloads/download-latest-stable-websphere-liberty-runtime/](https://developer.ibm.com/wasdev/downloads/download-latest-stable-websphere-liberty-runtime/)
+## Payara 5
+### Download
+- [Downloaden unter https://payara.fish/software/downloads/](https://payara.fish/software/downloads/)
 
-#### Zusätzliche Features installieren (inkl. full Java EE 8 support)
- - bin/installUtitlity install adminCenter-1.0
- - bin/server start
- - usr/servers/server-name/dropins
- - bin/installUtility install javaee-8.0
- 
- #### Maven dependency
- - im pom-File des jeweiligen Projektes folgendes dependency hinzufügen 
- ![alt text](images_application_server/16.png)
- 
- #### Konfiguration
- - "Edit Configuration" und dann neuen Application Server (WebSphere Local) auswählen
- - Selbes Spiel wie bei allen anderen auch (siehe Wildfly)
- 
- #### Starten des Servers
- - Beim Starten kommt folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: java.lang.IllegalStateException: CWOWB2000E: Die Annotation @javax.transaction.Transactional(value=REQUIRED, rollbackOn=[], dontRollbackOn=[]) ist in der EJB TennisplayerEndpoint nicht zulässig."<br>
-Das heißt, dass ich die @Transactional Annotation weggeben muss - soweit so gut.<br>
-Durch was soll ich es ersetzen? Keine Ahnung, deshalb habe ich es jetzt erstmal weggelassen.
-- Dann erschien folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: com.ibm.ws.exception.RuntimeWarning: CNTR0201E: The InitBean startup singleton session bean in the tennisclubadministration module failed initialization."<br>
-Fragen über Fragen, das Internet weiß leider keine für mich zufriedenstellende Antwort, deshalb hab ich es endgültig sein lassen.
+### Konfiguration
+- Da Payara von GlassFish abgeleitet ist, ist auch die Konfiguration sehr ähnlich. Deshalb bitte die Doku von GlassFish nachmachen (kleine Änderungen wie z.B.: payara5/bin/... statt glassfish5/bin...).
+- Bei der Erstellung des JDBC Connection Pools ist als <b>Database Driver Vendor "Derby" </b> einzugeben
+- Der Rest (Server Domain, Additional Properties, ...) ist exakt so wie bei GlassFish 
 
-Liberty funktioniert nicht!
+Payara 5 funktioniert jetzt! :tada:
 
 ## TomEE
 #### Download
@@ -186,13 +170,29 @@ Die offizielle Website von Apache TomEE verweist darauf hin, dass die aktuellste
 
 TomEE funktioniert jetzt! :tada:
 
-## Payara 5
-### Download
-- [Downloaden unter https://payara.fish/software/downloads/](https://payara.fish/software/downloads/)
+## Liberty 
+#### Download
+- [Downloaden unter https://developer.ibm.com/wasdev/downloads/download-latest-stable-websphere-liberty-runtime/](https://developer.ibm.com/wasdev/downloads/download-latest-stable-websphere-liberty-runtime/)
 
-### Konfiguration
-- Da Payara von GlassFish abgeleitet ist, ist auch die Konfiguration sehr ähnlich. Deshalb bitte die Doku von GlassFish nachmachen (kleine Änderungen wie z.B.: payara5/bin/... statt glassfish5/bin...).
-- Bei der Erstellung des JDBC Connection Pools ist als <b>Database Driver Vendor "Derby" </b> einzugeben
-- Der Rest (Server Domain, Additional Properties, ...) ist exakt so wie bei GlassFish 
+#### Zusätzliche Features installieren (inkl. full Java EE 8 support)
+ - bin/installUtitlity install adminCenter-1.0
+ - bin/server start
+ - usr/servers/server-name/dropins
+ - bin/installUtility install javaee-8.0
+ 
+ #### Maven dependency
+ - im pom-File des jeweiligen Projektes folgendes dependency hinzufügen 
+ ![alt text](images_application_server/16.png)
+ 
+ #### Konfiguration
+ - "Edit Configuration" und dann neuen Application Server (WebSphere Local) auswählen
+ - Selbes Spiel wie bei allen anderen auch (siehe Wildfly)
+ 
+ #### Starten des Servers
+ - Beim Starten kommt folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: java.lang.IllegalStateException: CWOWB2000E: Die Annotation @javax.transaction.Transactional(value=REQUIRED, rollbackOn=[], dontRollbackOn=[]) ist in der EJB TennisplayerEndpoint nicht zulässig."<br>
+Das heißt, dass ich die @Transactional Annotation weggeben muss - soweit so gut.<br>
+Durch was soll ich es ersetzen? Keine Ahnung, deshalb habe ich es jetzt erstmal weggelassen.
+- Dann erschien folgende Fehlermeldung: "[ERROR   ] CWWKZ0002E: Beim Starten der Anwendung Tennisclubadministration_war_exploded ist eine Ausnahme eingetreten. Ausnahmenachricht: com.ibm.ws.container.service.state.StateChangeException: com.ibm.ws.exception.RuntimeWarning: CNTR0201E: The InitBean startup singleton session bean in the tennisclubadministration module failed initialization."<br>
+Fragen über Fragen, das Internet weiß leider keine für mich zufriedenstellende Antwort, deshalb hab ich es endgültig sein lassen.
 
-Payara 5 funktioniert jetzt! :tada:
+Liberty funktioniert nicht!
