@@ -1,5 +1,7 @@
 # Julian Nobis - Application Server Konfiguration
 
+Randinfo: Screenshots sind Windows basierend (Pfad ist anders auf Linux, sonst bleibt alles gleich)
+
 ## Application Server
 
  - [Wildfly 15](#wildfly-15)
@@ -9,6 +11,7 @@
  - [Payara 5](#payara-5)
 
 ## Wildfly 15 
+Da die Dokumentation für den Wildfly Server sowohl auf Windows als auch auf Linux gleich ist, habe ich Wildfly in Windows konfiguriert (siehe Dateipfad-Screenshot).
 #### wildfly-15.0.1.Final downloaden
 - [Downloaden unter http://wildfly.org/downloads/](http://wildfly.org/downloads/)<br>
 
@@ -42,7 +45,7 @@ Der Wildfly Server ist nun vollständig konfiguriert. Jetzt fehlt nur noch im Ja
 <b>Mögliche Fehlermeldung: </b>Es kann sein, dass der von Wildfly standardmäßig verwendete Port (8080) belegt ist und folgende Fehlermeldung erscheint "Error when JBoss starts: address already in use".<br>
 <b>Bug Fix: </b> ![alt text](images_application_server/05.png) 
 
-Wildfly nun fertig konfiguriert! :tada
+Wildfly nun fertig konfiguriert! :tada:
 
 ## Glassfish 5
 #### Anforderungen
@@ -52,9 +55,24 @@ Wildfly nun fertig konfiguriert! :tada
 4. Web Browser (logisch)
 
 #### Konfiguration des GlassFish Servers
-- Strg+Alt+S (oder IntelliJ IDEA -> Preferences auf macOS) Build,Execution, Deployment -> Application Servers -> Add -> Glassfish Server<br>
+- Pfad: <b>Preferences -> Build, Execution, Deployment -> Application Servers -> Add -> Glassfish Server</b><br>
   - Heruntegeladenen GlassFish Server auswählen
 ![alt text](images_application_server/06.png)
+- Im Dateipfad zu <b>glassfish5/bin</b> navigieren
+- Folgends Kommando ausführen: <b>./asadmin start-domain</b>
+- Server läuft nun (Default: user name = "admin", kein Passwort)
+- Default GlassFish Server port: 8080
+- Administration Server port: 4848 (--> localhost:4848)
+- Jetzt muss der DerbyPool noch angepasst werden
+  - Zu folgendem Pfad navigieren: <b>Resources -> JDBC -> JDBC Connection Pool -> DerbyPool</b>
+  - Port (1527), User, Passwort, Server Name (localhost), Database Name setzen
+- Nun fehlt noch die Erstellung der JDBC Ressource
+  - Zuerst muss man zu <b>Resources -> JDBC -> JDBC Resources</b> navigieren
+  - JNDI Name (DbDS), Pool Name (DerbyPool --> vorher angepasst, jetzt wird es verwendet) Parameter eingeben
+- Zu guter Letzt muss bei der <b>persistence.xml</b> der JNDI Name verändert werden
+- Nachdem für den <b>Server Domain</b> "<b>domain1</b>" gewählt wurde, funktioniert alles!
+
+Folgende Unterpunkte (Konfiguration der JDK, Projekt erstellen, Projektstruktur, Source Code, Artifact Konfiguration, Run Configuration, Server starten, Mögliche Schwierigkeiten, Einbinden in bestehendes Projekt) beziehen sich auf WINDOWS und funktioneren nicht auf Linux! (Für mein kleines Projekt habe ich keine Datasource benötigt.) 
 
 #### Konfiguration der JDK (nur falls noch nicht vorhanden)
 - Strg+Shift+Alt+S (oder File -> Project Structure) im Hauptmenü
@@ -105,7 +123,7 @@ GlassFish nun fertig konfiguriert! :tada:
 - bereitet Probleme beim Starten
   - Exception Message: java.io.IOException: com.sun.enterprise.admin.remote.RemoteFailureException
   - Diverse StackOverflow Lösungsansätze, dependency Erweiterungen im pom-File und im config Verzeichnis von glassfish den http-listener ändern hat leider nichts geholfen
-- Ich habe es nicht geschafft, GlassFish in ein bestehendes Projekt einzubauen...
+- Ich habe es nicht geschafft, GlassFish in ein bestehendes Projekt einzubauen (DataSource-Probleme)...
 
 ## Liberty 
 #### Download
@@ -145,16 +163,36 @@ Die offizielle Website von Apache TomEE verweist darauf hin, dass die aktuellste
 - Für Windows:
   - cmd als Administrator ausführen und in das bin-Verzeichnis von apache-tomee-7... gehen
   - "service.bat install" ausführen 
-- Neue Konfiguration (TomEE Local) angelegt, bei Application Server die heruntergeladene Version ausgewählt und den Port angegeben
+  - reicht nicht auf Windows, deshalb genauere Anweisungen für Linux
+- <b>Für Linux:</b> 
+  - Java Version >= 6 muss als PATH angegeben sein (<b>JAVA_HOME=/.../java-6-oracle</b>) (am besten die aktuellste Java Version nehmen)
+  - Zum <b>bin</b> Verzeichnis navigieren
+  - Um TomEE als Hintergrundprozess laufen zu lassen
+    - <b>startup.sh</b> ausführen
+  - Um TomEE im Vordergrund laufen zu lassen (zu invoken)
+    - <b>catalina.sh run</b> ausführen
+  - Logging
+    - automatisch, nur wenn TomEE als Vordergrundprozess gestartet wurde
+    - im <b>logs</b> Verzeichnis (gleiche Ebene wie bin) <b>catalina.out</b> Datei ansehen
+  - Um TomEE zu stoppen
+    - im bin Verzeichnis: <b>shudtown.sh</b>
+    - wenn TomEE als Vordergrundprozess gestartet wurde: <b>Ctrl-C</b>
+  - <b>Konfiguration der DataSource</b>
+    - Name des Files: conf/tomee.xml
+    - Inhalt von tomee.xml ersetzen: <b>http://tomee.apache.org/common-datasource-configurations.html</b>
+    - Auf der Website Derby(Embedded) kopieren und bei den Parametern ein "=" setzen und die richtigen Werte wie gehabt einsetzen
+    - Neue Konfiguration (TomEE Local) angelegt, bei Application Server die heruntergeladene Version ausgewählt und den Port angegeben (funktioniert trotzdem nicht auf Windows, deshalb genauere Konfigurationsanweisungen bei Linux)
 ![alt text](images_application_server/14.png)
-- funktioniert trotdem nicht - was fehlt noch??
 
-#### Starten des Servers
-- Nachdem die Connection zum Server erfolgreich verlaufen ist, kommt folgende <b>Fehlermeldung</b>
-![alt text](images_application_server/15.png)
-- Auch hier habe ich schon zahlreiche Lösungen ausprobiert, nichts hat jedoch funktioniert.
-
-TomEE funktioniert nicht!
+TomEE funktioniert jetzt! :tada:
 
 ## Payara 5
-Habe Klassenkameraden gefragt, keiner konnte den Payara 5 zum Laufen kriegen...
+### Download
+- [Downloaden unter https://payara.fish/software/downloads/](https://payara.fish/software/downloads/)
+
+### Konfiguration
+- Da Payara von GlassFish abgeleitet ist, ist auch die Konfiguration sehr ähnlich. Deshalb bitte die Doku von GlassFish nachmachen (kleine Änderungen wie z.B.: payara5/bin/... statt glassfish5/bin...).
+- Bei der Erstellung des JDBC Connection Pools ist als <b>Database Driver Vendor "Derby" </b> einzugeben
+- Der Rest (Server Domain, Additional Properties, ...) ist exakt so wie bei GlassFish 
+
+Payara 5 funktioniert jetzt! :tada:
