@@ -8,8 +8,8 @@ public class HobbyPlayer extends Tennisplayer{
 
     // region Constructor
     public HobbyPlayer(){}
-    public HobbyPlayer(String name, double itn, int year_born, char sex, Boolean playsHobbycup){
-        super(name, itn, year_born, sex);
+    public HobbyPlayer(String name, double itn, int year_born, Gender sex, int wins, int losses, Boolean playsHobbycup){
+        super(name, itn, year_born, sex, wins, losses);
         this.playsHobbycup = playsHobbycup;
     }
     // endregion
