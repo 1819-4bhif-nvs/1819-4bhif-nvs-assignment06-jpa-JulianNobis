@@ -4,12 +4,12 @@ import javax.persistence.Entity;
 
 @Entity
 public class TournamentPlayer extends Tennisplayer {
-    private Integer licenseNumber; //wrapper class needed, otherwise an error occuredd
+    private Integer licenseNumber; // wrapper klasse wird benoetigt, ansonsten wird ein error geworfen
 
     // region Constructor
     public TournamentPlayer(){}
-    public TournamentPlayer(String name, double itn, int year_born, char sex, Integer licenseNumber){
-        super(name, itn, year_born, sex);
+    public TournamentPlayer(String name, double itn, int year_born, Gender sex, int wins, int losses, Integer licenseNumber){
+        super(name, itn, year_born, sex, wins, losses);
         this.licenseNumber = licenseNumber;
     }
     // endregion
