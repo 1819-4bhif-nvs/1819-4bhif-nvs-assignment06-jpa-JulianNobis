@@ -16,7 +16,7 @@ import java.util.Map;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({
-        @NamedQuery(name = "Tennismatch.findAll", query = "select m from Tennismatch m join fetch m.tennisplayers")
+        @NamedQuery(name = "Tennismatch.findAll", query = "select m from Tennismatch m")
 })
 public abstract class Tennismatch {
     @Id
