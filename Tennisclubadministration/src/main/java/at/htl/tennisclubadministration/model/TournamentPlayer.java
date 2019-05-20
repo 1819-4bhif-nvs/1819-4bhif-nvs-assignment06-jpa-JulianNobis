@@ -8,7 +8,7 @@ public class TournamentPlayer extends Tennisplayer {
 
     // region Constructor
     public TournamentPlayer(){}
-    public TournamentPlayer(String name, double itn, int year_born, Gender sex, int wins, int losses, Integer licenseNumber){
+    public TournamentPlayer(String name, double itn, int year_born, GenderPlayers.Gender sex, int wins, int losses, Integer licenseNumber){
         super(name, itn, year_born, sex, wins, losses);
         this.licenseNumber = licenseNumber;
     }
