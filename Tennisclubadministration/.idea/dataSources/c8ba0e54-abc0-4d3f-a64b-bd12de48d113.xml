@@ -47,7 +47,7 @@
       <Position>5</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="24" parent="13" name="SQL190520193926180">
+    <index id="24" parent="13" name="SQL190520200759480">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
@@ -60,7 +60,7 @@
       <ColNames>USERNAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="27" parent="13" name="SQL190520193926180">
+    <key id="27" parent="13" name="SQL190520200759480">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -86,16 +86,16 @@
       <Position>3</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="33" parent="14" name="SQL190520193926210">
+    <index id="33" parent="14" name="SQL190520200759500">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="34" parent="14" name="SQL190520193926390">
+    <index id="34" parent="14" name="SQL190520200759600">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CATEGORY_ID</ColNames>
     </index>
-    <key id="35" parent="14" name="SQL190520193926210">
+    <key id="35" parent="14" name="SQL190520200759500">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -103,7 +103,7 @@
     <foreign-key id="36" parent="14" name="FK29X65SLVONBBRDJKHI84GLLA7">
       <ColNames>CATEGORY_ID</ColNames>
       <RefTableName>CATEGORY</RefTableName>
-      <RefKeyName>SQL190520193137400</RefKeyName>
+      <RefKeyName>SQL190520200759520</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="37" parent="15" name="ASSIGNMENT_ID">
@@ -115,14 +115,14 @@
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="39" parent="15" name="SQL190520193926420">
+    <index id="39" parent="15" name="SQL190520200759620">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ASSIGNMENT_ID</ColNames>
     </index>
     <foreign-key id="40" parent="15" name="FKIR4O4WTBXO8WHWWSUW63PUWNX">
       <ColNames>ASSIGNMENT_ID</ColNames>
       <RefTableName>ASSIGNMENT</RefTableName>
-      <RefKeyName>SQL190520193137380</RefKeyName>
+      <RefKeyName>SQL190520200759500</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="41" parent="16" name="ID">
@@ -144,16 +144,16 @@
       <Position>4</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="45" parent="16" name="SQL190520193926240">
+    <index id="45" parent="16" name="SQL190520200759520">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="46" parent="16" name="SQL190520193926450">
+    <index id="46" parent="16" name="SQL190520200759630">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PARENTCATEGORY_ID</ColNames>
     </index>
-    <key id="47" parent="16" name="SQL190520193926240">
+    <key id="47" parent="16" name="SQL190520200759520">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -161,7 +161,7 @@
     <foreign-key id="48" parent="16" name="FKC4BOG6VTFVRB0P1LT7PQ6TC75">
       <ColNames>PARENTCATEGORY_ID</ColNames>
       <RefTableName>CATEGORY</RefTableName>
-      <RefKeyName>SQL190520193137400</RefKeyName>
+      <RefKeyName>SQL190520200759520</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="49" parent="17" name="CATEGORY_ID">
@@ -174,45 +174,45 @@
       <DataType>BIGINT|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="51" parent="17" name="SQL190520193926260">
+    <index id="51" parent="17" name="SQL190520200759540">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CATEGORY_ID
 SUBCATEGORIES_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="52" parent="17" name="SQL190520193926370">
+    <index id="52" parent="17" name="SQL190520200759590">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SUBCATEGORIES_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="53" parent="17" name="SQL190520193926510">
+    <index id="53" parent="17" name="SQL190520200759660">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CATEGORY_ID</ColNames>
     </index>
-    <index id="54" parent="17" name="SQL190520193926480">
+    <index id="54" parent="17" name="SQL190520200759640">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SUBCATEGORIES_ID</ColNames>
     </index>
-    <key id="55" parent="17" name="SQL190520193926260">
+    <key id="55" parent="17" name="SQL190520200759540">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CATEGORY_ID
 SUBCATEGORIES_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="56" parent="17" name="SQL190520193926370">
+    <key id="56" parent="17" name="SQL190520200759590">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SUBCATEGORIES_ID</ColNames>
     </key>
     <foreign-key id="57" parent="17" name="FKTOPIVT1ASQD7KG0GW47NOC3BI">
       <ColNames>CATEGORY_ID</ColNames>
       <RefTableName>CATEGORY</RefTableName>
-      <RefKeyName>SQL190520193137400</RefKeyName>
+      <RefKeyName>SQL190520200759520</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="58" parent="17" name="FKNJA2HVGB5MODNFRTJBMVVIM0D">
       <ColNames>SUBCATEGORIES_ID</ColNames>
       <RefTableName>CATEGORY</RefTableName>
-      <RefKeyName>SQL190520193137400</RefKeyName>
+      <RefKeyName>SQL190520200759520</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="59" parent="18" name="ID">
@@ -278,16 +278,16 @@ SUBCATEGORIES_ID</ColNames>
       <Position>15</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="74" parent="18" name="SQL190520193926280">
+    <index id="74" parent="18" name="SQL190520200759550">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="75" parent="18" name="SQL190520193926540">
+    <index id="75" parent="18" name="SQL190520200759670">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CATEGORY_ID</ColNames>
     </index>
-    <key id="76" parent="18" name="SQL190520193926280">
+    <key id="76" parent="18" name="SQL190520200759550">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -295,7 +295,7 @@ SUBCATEGORIES_ID</ColNames>
     <foreign-key id="77" parent="18" name="FKT58OOPHGPB0EWTDDFESSMJWLT">
       <ColNames>CATEGORY_ID</ColNames>
       <RefTableName>CATEGORY</RefTableName>
-      <RefKeyName>SQL190520193137400</RefKeyName>
+      <RefKeyName>SQL190520200759520</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
   </database-model>
