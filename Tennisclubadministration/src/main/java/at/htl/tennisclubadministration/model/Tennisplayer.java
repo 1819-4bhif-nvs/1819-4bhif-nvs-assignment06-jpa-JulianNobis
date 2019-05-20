@@ -9,11 +9,6 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.util.ArrayList;
 import java.util.List;
 
-enum Gender {
-    MALE,
-    FEMALE
-}
-
 @XmlRootElement
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -31,7 +26,7 @@ public class Tennisplayer {
     protected String name; // firstName <blank> lastName
     protected double itn; //ITN = international tennis number(Indikator für die ungefähre Spielstärke des jew. Spielers)
     protected int year_born;
-    protected Gender sex;
+    protected GenderPlayers.Gender sex;
     protected int wins;
     protected int losses;
     @JsonIgnore
@@ -39,10 +34,10 @@ public class Tennisplayer {
     @Column(name="DTYPE", insertable = false, updatable = false)
     private String dType;
 
-    @ManyToMany(mappedBy = "tennisplayers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    /*@ManyToMany(mappedBy = "tennisplayers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     @XmlTransient
-    protected List<Tennismatch> tennismatches;
+    protected List<Tennismatch> tennismatches;*/
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
@@ -51,7 +46,7 @@ public class Tennisplayer {
 
     // region Constructor
     public Tennisplayer(){}
-    public Tennisplayer(String name, double itn, int year_born, Gender sex, int wins, int losses){
+    public Tennisplayer(String name, double itn, int year_born, GenderPlayers.Gender sex, int wins, int losses){
         this.name = name;
         this.itn = itn;
         this.year_born = year_born;
@@ -67,13 +62,13 @@ public class Tennisplayer {
         this.id = id;
     }
 
-    public List<Tennismatch> getTennismatches() {
+    /*public List<Tennismatch> getTennismatches() {
         return tennismatches;
     }
 
     public void setTennismatches(List<Tennismatch> tennismatches) {
         this.tennismatches = tennismatches;
-    }
+    }*/
 
     public void setTeam(Team newTeam){
         if (this.team != null){
@@ -114,11 +109,11 @@ public class Tennisplayer {
         this.year_born = year_born;
     }
 
-    public Gender getSex() {
+    public GenderPlayers.Gender getSex() {
         return sex;
     }
 
-    public void setSex(Gender sex) {
+    public void setSex(GenderPlayers.Gender sex) {
         this.sex = sex;
     }
 
