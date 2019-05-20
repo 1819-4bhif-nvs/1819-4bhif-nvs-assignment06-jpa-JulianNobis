@@ -1,10 +1,19 @@
 package at.htl.tennisclubadministration.model;
 
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
 @Entity
+@XmlRootElement
+@NamedQueries( {
+    @NamedQuery(name = "Singles.findAll", query = "select s from Singles s"),
+    @NamedQuery(name = "Singles.findById", query = "select s from Singles s where s.id = ?1"),
+    @NamedQuery(name = "Singles.getWinner", query = "select s.winner from Singles s")
+})
 public class Singles extends Tennismatch {
     @OneToOne
     private Tennisplayer player1 = new Tennisplayer();
