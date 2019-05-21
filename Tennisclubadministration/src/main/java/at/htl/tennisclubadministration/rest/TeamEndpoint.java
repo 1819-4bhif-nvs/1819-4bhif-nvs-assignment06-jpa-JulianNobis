@@ -45,7 +45,7 @@ public class TeamEndpoint {
     public Response createTeam(Team team){
         em.persist(team);
         em.flush();
-        return Response.created(URI.create("http://localhost:8181/tennisclubadministration/api/team/find/" + team.getId())).build();
+        return Response.created(URI.create("http://localhost:8080/tennisclubadministration/api/team/find/" + team.getId())).build();
     }
 
 }

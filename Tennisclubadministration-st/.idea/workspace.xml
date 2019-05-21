@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73b991c8-a9c7-4862-b916-ceebfa8a3e86" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/at/htl/tennisclubadministration/TennisclubadministrationST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/htl/tennisclubadministration/TennisclubadministrationST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/.idea/dataSources/72ae272f-46f3-4215-87ac-85aa30aab027.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/.idea/dataSources/72ae272f-46f3-4215-87ac-85aa30aab027.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/derby.log" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/Doubles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tennisclubadministration/tennisclubadministration.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/.idea/dataSources/72ae272f-46f3-4215-87ac-85aa30aab027.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/.idea/dataSources/72ae272f-46f3-4215-87ac-85aa30aab027.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/HobbyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/HobbyPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/Tennismatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/Tennismatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/Tennisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/Tennisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/TournamentPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tennisclubadministration/src/main/java/at/htl/tennisclubadministration/model/TournamentPlayer.java" afterDir="false" />
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,6 +56,7 @@
     </expand>
     <select />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="-1845095316">
       <usages-collector id="statistics.lifecycle.project">
@@ -72,6 +88,8 @@
       </usages-collector>
     </session>
   </component>
+=======
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -92,11 +110,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/at/htl/tennisclubadministration/TennisclubadministrationST.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="60">
               <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+=======
+            <state relative-caret-position="315">
+              <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
             </state>
           </provider>
         </entry>
@@ -128,13 +151,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/at/htl/model/Tennisplayer.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="375">
+=======
+            <state relative-caret-position="480">
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
               <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#0#28#1" expanded="true" />
+                <element signature="e#0#49#1" expanded="true" />
+                <element signature="e#0#44#1" expanded="true" />
+                <element signature="e#0#84#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,12 +206,6 @@
         <option value="$PROJECT_DIR$/src/test/java/at/htl/tennisclubadministration/TennisclubadministrationST.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -241,31 +266,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="htl" type="462c0819:PsiDirectoryNode" />
-              <item name="converter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tennisclubadministration-st" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tennisclubadministration-st" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="htl" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tennisclubadministration-st" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tennisclubadministration-st" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tennisclubadministration-st" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tennisclubadministration-st" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tennisclubadministration-st" type="b2602c69:ProjectViewProjectNode" />
@@ -293,17 +294,25 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
       <pane id="AndroidView" />
+=======
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="derby" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548139893682" />
     <property name="database.console.LAST_STATE" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tennisclubadministration" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../test03/1819-4bhif-nvs-assignment11-test03-JulianNobis/MittagsMenue-st" />
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -330,6 +339,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="at.htl.tennisclubadministration" />
       <option name="MAIN_CLASS_NAME" value="at.htl.tennisclubadministration.TennisclubadministrationST" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -430,8 +440,12 @@
       <workItem from="1548056426759" duration="6028000" />
       <workItem from="1548139333275" duration="564000" />
       <workItem from="1549217690664" duration="5000" />
+<<<<<<< HEAD
       <workItem from="1552984384155" duration="618000" />
       <workItem from="1554185211978" duration="170000" />
+=======
+      <workItem from="1556618157119" duration="360000" />
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
     </task>
     <servers />
   </component>
@@ -468,12 +482,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="13254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2728279" />
+=======
+    <option name="totallyTimeSpent" value="12826000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26950747" />
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -514,8 +538,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/at/htl/tennisclubadministration/TennisclubadministrationST.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF.persistence.xml" />
@@ -581,6 +619,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/at/htl/model/Tennisplayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -591,6 +630,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
     <entry file="file://$PROJECT_DIR$/src/main/java/at/htl/model/TournamentPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -600,8 +641,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/at/htl/tennisclubadministration/TennisclubadministrationST.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="60">
           <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+=======
+        <state relative-caret-position="315">
+          <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/at/htl/model/Tennisplayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#28#1" expanded="true" />
+            <element signature="e#0#49#1" expanded="true" />
+            <element signature="e#0#44#1" expanded="true" />
+            <element signature="e#0#84#1" expanded="true" />
+          </folding>
+>>>>>>> 56c034a1a3c987378b4da7cda150aefe84e544b9
         </state>
       </provider>
     </entry>
