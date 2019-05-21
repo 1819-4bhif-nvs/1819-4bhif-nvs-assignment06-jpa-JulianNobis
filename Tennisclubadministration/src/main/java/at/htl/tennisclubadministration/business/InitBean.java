@@ -21,7 +21,6 @@ public class InitBean {
 
     @PostConstruct
     private void init(){
-        System.out.println("reached first persist");
 
         Team team = new Team("Landesliga C");
         Tennisplayer julianNobis = new TournamentPlayer("Julian Nobis", 5.0, 2001, GenderPlayers.Gender.MALE,0,0,  000001);
@@ -45,15 +44,12 @@ public class InitBean {
         team.addTeamMember(philippBräuer);
         team.addTeamMember(yannikLeitner);
 
-        System.out.println("reached second persist");
-
         em.persist(team);
 
         Tennismatch firstSingle = new Singles(LocalDate.now(), 140, "6:4 6:7 6:0", julianNobis, philippBräuer, julianNobis);
         Tennismatch secondSingle = new Singles(LocalDate.now(), 70, "6:4 6:1", danGroza, yannikLeitner, danGroza);
         Tennismatch thirdSingle = new Singles(LocalDate.now(), 100, "6:2 6:4", soranaGroza, sofiaGroza, sofiaGroza);
 
-        System.out.println("reached third persist");
 
         em.persist(firstSingle);
         em.persist(secondSingle);
