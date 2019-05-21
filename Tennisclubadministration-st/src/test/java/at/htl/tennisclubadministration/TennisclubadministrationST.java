@@ -33,7 +33,7 @@ public class TennisclubadministrationST {
     @BeforeClass
     public static void init(){
         client = ClientBuilder.newClient();
-        target = client.target("http://localhost:8181/tennisclubadministration/api");
+        target = client.target("http://localhost:8181/tennisclubadministration/api"); //has to be 8080 on linux!!!
         em = Persistence.createEntityManagerFactory("dbPU").createEntityManager();
     }
 
