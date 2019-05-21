@@ -2,10 +2,7 @@ package at.htl.tennisclubadministration.model;
 
 import javafx.util.Pair;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 import java.util.LinkedHashMap;
@@ -16,51 +13,84 @@ import java.util.Map;
 @NamedQueries( {
         @NamedQuery(name = "Doubles.findAll", query = "select d from Doubles d"),
         @NamedQuery(name = "Doubles.findById", query = "select d from Doubles d where d.id = ?1"),
-        @NamedQuery(name = "Doubles.getWinner", query = "select d.winner from Doubles d")
+        @NamedQuery(name = "Doubles.getWinners", query = "select d.winner1, d.winner2 from Doubles d")
 })
 public class Doubles extends Tennismatch {
 
-    @OneToMany
-    private Map<Tennisplayer, Tennisplayer> players1 = new LinkedHashMap();
-    @OneToMany
-    private Map<Tennisplayer, Tennisplayer> players2 = new LinkedHashMap<>();
-    @OneToMany
-    private Map<Tennisplayer, Tennisplayer> winner = new LinkedHashMap<>();
+    @OneToOne
+    private Tennisplayer firstTeamPlayer1 = new Tennisplayer();
+    @OneToOne
+    private Tennisplayer firstTeamPlayer2 = new Tennisplayer();
+    @OneToOne
+    private Tennisplayer secondTeamPlayer1 = new Tennisplayer();
+    @OneToOne
+    private Tennisplayer secondTeamPlayer2 = new Tennisplayer();
+    @OneToOne
+    private Tennisplayer winner1 = new Tennisplayer();
+    @OneToOne
+    private Tennisplayer winner2 = new Tennisplayer();
 
     // region Constructor
     public Doubles() { }
 
-    public Doubles(LocalDate localDate, int duration, String score, Map<Tennisplayer, Tennisplayer> players1, Map<Tennisplayer, Tennisplayer> players2, Map<Tennisplayer, Tennisplayer> winner) {
+    public Doubles(LocalDate localDate, int duration, String score, Tennisplayer firstTeamPlayer1, Tennisplayer firstTeamPlayer2, Tennisplayer secondTeamPlayer1, Tennisplayer secondTeamPlayer2, Tennisplayer winner1, Tennisplayer winner2) {
         super(localDate, duration, score);
-        this.players1 = players1;
-        this.players2 = players2;
-        this.winner = winner;
+        this.firstTeamPlayer1 = firstTeamPlayer1;
+        this.firstTeamPlayer2 = firstTeamPlayer2;
+        this.secondTeamPlayer1 = secondTeamPlayer1;
+        this.secondTeamPlayer2 = secondTeamPlayer2;
+        this.winner1 = winner1;
+        this.winner2 = winner2;
     }
     // endregion
 
     // region Getter & Setter
-    public Map<Tennisplayer, Tennisplayer> getPlayers1() {
-        return players1;
+    public Tennisplayer getFirstTeamPlayer1() {
+        return firstTeamPlayer1;
     }
 
-    public void setPlayers1(Map<Tennisplayer, Tennisplayer> players1) {
-        this.players1 = players1;
+    public void setFirstTeamPlayer1(Tennisplayer firstTeamPlayer1) {
+        this.firstTeamPlayer1 = firstTeamPlayer1;
     }
 
-    public Map<Tennisplayer, Tennisplayer> getPlayers2() {
-        return players2;
+    public Tennisplayer getFirstTeamPlayer2() {
+        return firstTeamPlayer2;
     }
 
-    public void setPlayers2(Map<Tennisplayer, Tennisplayer> players2) {
-        this.players2 = players2;
+    public void setFirstTeamPlayer2(Tennisplayer firstTeamPlayer2) {
+        this.firstTeamPlayer2 = firstTeamPlayer2;
     }
 
-    public Map<Tennisplayer, Tennisplayer> getWinner() {
-        return winner;
+    public Tennisplayer getSecondTeamPlayer1() {
+        return secondTeamPlayer1;
     }
 
-    public void setWinner(Map<Tennisplayer, Tennisplayer> winner) {
-        this.winner = winner;
+    public void setSecondTeamPlayer1(Tennisplayer secondTeamPlayer1) {
+        this.secondTeamPlayer1 = secondTeamPlayer1;
+    }
+
+    public Tennisplayer getSecondTeamPlayer2() {
+        return secondTeamPlayer2;
+    }
+
+    public void setSecondTeamPlayer2(Tennisplayer secondTeamPlayer2) {
+        this.secondTeamPlayer2 = secondTeamPlayer2;
+    }
+
+    public Tennisplayer getWinner1() {
+        return winner1;
+    }
+
+    public void setWinner1(Tennisplayer winner1) {
+        this.winner1 = winner1;
+    }
+
+    public Tennisplayer getWinner2() {
+        return winner2;
+    }
+
+    public void setWinner2(Tennisplayer winner2) {
+        this.winner2 = winner2;
     }
     // endregion
 
