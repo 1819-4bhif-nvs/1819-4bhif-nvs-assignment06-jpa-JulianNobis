@@ -14,7 +14,7 @@ import java.util.Map;
 
 @XmlRootElement
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({
         @NamedQuery(name = "Tennismatch.findAll", query = "select m from Tennismatch m")
 })
