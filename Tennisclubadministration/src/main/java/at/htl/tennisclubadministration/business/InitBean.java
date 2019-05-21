@@ -59,18 +59,8 @@ public class InitBean {
         em.persist(secondSingle);
         em.persist(thirdSingle);
 
-
-        Map<Tennisplayer, Tennisplayer> firstPairDouble1 = new LinkedHashMap();
-        firstPairDouble1.put(julianNobis, danGroza); // geht leider nur als Map, da 'Pair' nicht funktioniert ohne dass man java-openjfx installiert
-        Map<Tennisplayer, Tennisplayer> secondPairDouble1 = new LinkedHashMap();
-        secondPairDouble1.put(yannikLeitner, philippBräuer);
-        Tennismatch firstDouble = new Doubles(LocalDate.now(), 80, "6:4 6:3", firstPairDouble1, secondPairDouble1, firstPairDouble1);
-
-        Map<Tennisplayer, Tennisplayer> firstPairDouble2 = new LinkedHashMap();
-        firstPairDouble2.put(sofiaGroza, philippBräuer);
-        Map<Tennisplayer, Tennisplayer> secondPairDouble2 = new LinkedHashMap();
-        secondPairDouble2.put(soranaGroza, danGroza);
-        Tennismatch secondDouble = new Doubles(LocalDate.now(), 110, "7:5 6:7 10:8", firstPairDouble2, secondPairDouble2, secondPairDouble2);
+        Tennismatch firstDouble = new Doubles(LocalDate.now(), 80, "6:4 6:3", julianNobis, danGroza, yannikLeitner, philippBräuer, julianNobis, danGroza);
+        Tennismatch secondDouble = new Doubles(LocalDate.now(), 110, "7:5 6:7 10:8", sofiaGroza, philippBräuer, soranaGroza, danGroza, soranaGroza, danGroza);
 
         em.persist(firstDouble);
         em.persist(secondDouble);
